@@ -12,6 +12,10 @@ class Model(object):
     def __init__(self):
         self._valid_properties = {}
 
+    def as_json(self):
+        """ Returns a json representation of the resource """
+        return _json.dumps(self.as_dict(), ensure_ascii=False)
+
     def as_dict(self):
         """ Returns a dict representation of the resource """
         result = {}
